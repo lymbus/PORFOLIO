@@ -1,6 +1,3 @@
-¡Hola! 👋🏻
-
-Este proyecto es la evaluación final del módulo III, en el que aprendimos React.js en Adalab. Se trata de un buscador de los personajes de la serie Rick y Morty.
 
 # MI PORFOLIO WEB
 
