@@ -1,0 +1,30 @@
+
+@mixin flexible( $a, $b, $c, $d ){
+	display			: flex;
+	flex-flow		  : $a $b;
+	justify-content	: $c;
+	@if $b == 'nowrap' {
+		align-items		: $d;	
+	}@else{
+		align-content	: $d;
+	}	
+}
+
+@mixin glass {
+	background: rgba(255, 255, 255, 0.589);
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	backdrop-filter: blur( 5.0px );
+	-webkit-backdrop-filter: blur( 5.0px );
+	border-radius: 10px;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );	
+}
+@mixin efecto ($oscuro,$claro) {
+    border-radius: 21px;
+    box-shadow: 10px  10px  23px $oscuro,
+               -10px  -10px 23px $claro;
+}
+@mixin fontSecciones {
+		font-size:  var(--tipoSeccionSize);
+        font-weight: var(--tipoSeccionWeight);
+	    text-transform: uppercase;	
+}

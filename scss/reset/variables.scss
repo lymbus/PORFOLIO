@@ -1,0 +1,21 @@
+:root{
+    --colorFondo:#e6e6e6;
+    --colorSecundario:rgb(118, 212, 216);
+    --colorTerc:#161616;
+    --colorLetras:rgb(15, 15, 15);
+
+    --tipografia:'Inconsolata';
+    --tipoSeccionSize:1.6em;
+    --tipoSeccionWeight:600;
+
+    --neoOscuro:#6ab4af;
+    --neoClaro:#ffffff;
+}
+
+@media only screen and (max-width:960px){
+    :root{
+        --tipoSeccionSize:1.2em;
+        --tipoSeccionWeight:600;
+    }
+} 
+

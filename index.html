@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/app.js" defer></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <title>Lydia</title>
+</head>
+<body >
+    <header class="header">
+        <h1 class="header__h1">
+            <a class="header__logo " href="" title="logo">Lydia</a>
+        </h1>
+        <nav class="header__nav">
+            <ul class="header__ul">
+                <li class="header__li">
+                    <a class="header__a" href="#inicio"    title="Inicio"   > Inicio.    </a>
+                    <div class="linea aqui"></div>
+                </li>
+                <li class="header__li">
+                    <a class="header__a" href="#proyectos" title="Proyectos"> Proyectos. </a>
+                    <div class="linea"></div>
+                </li>
+                <li class="header__li">
+                    <a class="header__a" href="#about"     title="Sobre mi" > Sobre mi.  </a>
+                    <div class="linea"></div>
+                </li>
+                <li class="header__li">
+                    <a class="header__a" id="aContacto" href="#"   title="Contacto" > Contacto.  </a>
+                    <div class="linea"></div>
+                </li>
+            </ul>
+            <ul class="header__ul">
+                <li class="header__fab"><a  class="header__a fab fa-github"          href="https://github.com/lymbus" title="Github" target="_blank" rel="noopener noreferrer"></a></li>
+                <li class="header__fab"><a  class="header__a fab fab fa-linkedin-in" href="https://www.linkedin.com/in/lydia-est%C3%A9vez-chamorro/" title="LinkedIn" target="_blank" rel="noopener noreferrer"></a></li>
+            </ul>
+        </nav> 
+        <div class="header__menu"></div>
+    </header>
+    <main class="main">
+        <section class=" inicio" id="inicio">
+            <img class="inicio__fondo" src="assets/fondo.png" alt="fondo" loading="lazy">
+            
+            <h2 class="inicio__logo">L</h2>
+            <h3 class="inicio__h3">
+                Hola,soy Lydia,<strong>desarrolladora Front-End</strong>
+            </h3>
+            <p class="inicio__p">Es decir que uso HTML, CSS, SCSS y Javascript.</p>
+            <div class="inicio__explorar"><a href="#inicio" class="inicio__a">Conóceme mejor</a></div>
+            <i class="inicio__scroll fas fas fa-arrow-down"></i>
+        </section>
+        
+        <div class="proyectos" id="proyectos">
+            <section class="proyectos__tipo">
+                <h2 class="proyectos__h2">Proyectos</h2>
+                <p class="proyectos__p">Ejercicios desarrollados durante el curso Desarrolladora Web de Bejob</p>
+ 
+                <ul class="proyectos__ul">
+                    <li class="proyectos__li"><a class="proyectos__git web"  href="https://lymbus.github.io/STKLM/" title="Réplica web STKLM" target="_blank" rel="noopener noreferrer"><i class="fab fas fa-desktop"></i></a></li>
+                    <li class="proyectos__li"><a class="proyectos__git" href="https://github.com/lymbus/STKLM" title="Repositorio web STKLM" target="_blank" rel="noopener noreferrer"><i class="fab fas fa-code"></i></a></li>
+                </ul>
+                <ul class="proyectos__ul zoom">
+                    <li class="proyectos__li"><a class="proyectos__git web"  href="https://lymbus.github.io/Pixar/" title="Réplica web Pixar" target="_blank" rel="noopener noreferrer"><i class="fab fas fa-desktop"></i></a></li>
+                    <li class="proyectos__li"><a class="proyectos__git" href="https://github.com/lymbus/Pixar" title="Repositorio web Pixar" target="_blank" rel="noopener noreferrer"><i class="fab fas fa-code"></i></a></li>
+                </ul>
+                <ul class="proyectos__ul">
+                    <li class="proyectos__li"><a class="proyectos__git web"  href="https://lymbus.github.io/_Ark/" title="Réplica web Ark" target="_blank" rel="noopener noreferrer"><i class="fab fas fa-desktop"></i></a></li>
+                    <li class="proyectos__li"><a class="proyectos__git" href="https://github.com/lymbus/_Ark" title="Repositorio web Ark" target="_blank" rel="noopener noreferrer"><i class="fab fas fa-code"></i></a></li>
+                </ul>
+                
+            </section>
+    
+            <div class="proyectos__slider">
+                <h2 class="proyectos__h2">Fotografía|Ilustración|3D</h2>
+                <div class="proyectos__flecha siguiente"> <i class="proyectos__fas fas fa-angle-right"></i> </div>
+                <div class="proyectos__flecha anterior"> <i class="proyectos__fas fas fa-angle-left"></i> </div>
+                <div class="proyectos__filtro"></div>
+                <img class="proyectos__img ver" src="assets/planoMadrid.png" alt="planoMadrid" loading="lazy"> 
+                <img class="proyectos__img " src="assets/1.PNG" alt="Collage" loading="lazy">
+                <img class="proyectos__img" src="assets/2.PNG" alt="Foto" loading="lazy"> 
+                <img class="proyectos__img" src="assets/3.PNG" alt="Foto2" loading="lazy"> 
+                <img class="proyectos__img " src="assets/experimento.png" alt="Imagen" loading="lazy">
+            </div>
+        </div>
+        <section class="about" id="about">
+            <h2 class="about__h2">Sobre mi</h2>
+            <p>Mi nombre es Lydia. </p>
+            <div class="about__grid">
+                <div class="about__item descripcion">
+                    <h3 class="about__h3">¿Quién soy?</h3>
+                    <p class="about__p">
+                        Arquitecta y artista 3D , me encuentro reinvántome como desarrolladora web, aprendiendo cosas nuevas cada día.
+                        Especialmente interesada en sostenibilidad y temas sociales,creo que este mundo brinda muy buenas oportunidades para aportar,y estoy deseando investigar y trabajar en ello.
+                        Además, me encanta la fusión 3D y web, siento que es otra forma de experimentar espacios y me encuentro aprendiendo sobre AR y VR.
+                    </p>
+                </div>
+                <div class="about__item">
+                    <h3 class="about__h3">Logo</h3></div>
+                <div class="about__item tec">
+                 
+                </div>
+                <div class="about__item">
+                    <h3 class="about__h3">Desarrollo web</h3>
+                    <ul class="about__ul">
+                        <li class="about__li">Metodología BEM</li>
+                        <li class="about__li">HTML5</li>
+                        <li class="about__li">CSS3|Sass</li>
+                        <li class="about__li">Flexbox</li>
+                        <li class="about__li">CSS Grid</li>
+                        <li class="about__li">Javascript</li>
+                        <li class="about__li">Typescript</li>
+                    </ul>
+                </div>
+                <div class="about__item">
+                    <h3 class="about__h3">DISEÑO</h3>
+                    <ul class="about__ul">
+                        <li class="about__li">Photoshop</li>
+                        <li class="about__li">Illustrator</li>
+                        <li class="about__li">AfterEffects</li>
+                        <li class="about__li">Revit</li>
+                        <li class="about__li">AutoCAD</li>
+                        <li class="about__li">Blender</li>
+                        <li class="about__li">Unreal Engine 4</li>
+                    </ul>
+                </div>
+                <div class="about__item prop">
+                    <p class="about__p">
+                        ¡Me encuentro buscando mi primer trabajo como desarrolladora!
+                        Con muchas ganas de seguir aprendiendo y formándome,si quieres darme feedback ,compartir conocimiento o por supuesto, contar conmigo en tu equipo, contacta conmigo:)
+                    </p>
+                </div>
+                <div class="about__item imagen">
+                    <img class="item__img" src="assets/foto.png" alt="Foto perfil Lydia">
+                </div>
+                  
+            </div>
+            
+        </section>
+        <div class="contacto" id="contacto">
+            
+            <p class="contacto__p">Contacta conmigo</p>
+            <div class="contacto__pop">
+                <i class="contacto__cerrar far far fa-window-close"></i>
+                
+                <div class="contacto__formulario">
+                    <div class="contacto__columna saludo">
+                        <lottie-player class="contacto__img" src="https://assets10.lottiefiles.com/packages/lf20_3vbOcw.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+                        <ul class="contacto__ul">
+                            <li class="contacto__li">
+                                Conoce mi trabajo en Github
+                            </li>
+                            <li class="contacto__li">
+                                <a class="contacto__a fab fa-github" href="https://github.com/lymbus" title="Github" target="_blank" rel="noopener noreferrer"></a>
+                            </li>
+                            <li class="contacto__li">
+                                Encuéntrame en LinkedIn
+                            </li>
+                            <li class="contacto__li">
+                                <a class="contacto__a fab fab fa-linkedin-in" href="https://www.linkedin.com/in/lydia-est%C3%A9vez-chamorro/" title="LinkedIn" target="_blank" rel="noopener noreferrer"></a>
+                            </li>
+                         
+                        </ul>
+                    </div>
+                    <section class="contacto__columna">
+                        <h2 class="contacto__h2">Contacto.</h2>
+                        <p class="contacto__inv">¡Hablemos!</p>
+                        <form class="form" action="https://formspree.io/f/xleokzvb" method="post">
+                            <input class="form__entrada" type="text" name="_replyto" placeholder="Email">
+                            
+                            <textarea class="form__entrada" name="message" placeholder="Mensaje"></textarea>
+                           
+                            <button class="form__boton" type="submit">Enviar</button>
+                        </form>
+                    </section>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <h2 class="footer__h2">Logo</h2>
+        <ul class="footer__ul">
+            <li class="footer__li">
+                <a class="footer__fab fab fa-github" href="https://github.com/lymbus" title="Github" target="_blank" rel="noopener noreferrer"></a>
+            </li>
+            <li class="footer__li">
+                <a class="footer__fab fab fab fa-linkedin-in" href="https://www.linkedin.com/in/lydia-est%C3%A9vez-chamorro/" title="LinkedIn" target="_blank" rel="noopener noreferrer"></a>
+             </li>
+        </ul>
+        <p class="footer__copy">© Lydia Estévez Chamorro 2021</p>
+    </footer>
+</body>
+</html>
