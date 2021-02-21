@@ -1,7 +1,7 @@
 
 # MI PORFOLIO WEB
 
-Como último ejercicio del curso de desarrollador web, he desarrollado mi porfolio web, con los ejercicios anteriores y donde iré actualizando con nuevas réplicas de webs y ejercicios que haga para practicar y aprender mucho más.
+Como último ejercicio del curso de desarrollador web he desarrollado mi porfolio web, con los ejercicios anteriores y donde iré actualizando con nuevas réplicas de webs y ejercicios que haga para practicar y aprender mucho más.
 
 Está desarrollado con HTML5, sass compilado mediantre prepros, y con typescript y es totalmente responsive.
 
