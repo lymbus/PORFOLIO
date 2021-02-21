@@ -25,6 +25,8 @@ Está desarrollado con HTML5, sass compilado mediantre prepros, y con typescript
  
  -[LinkedIn](https://www.linkedin.com/in/lydia-est%C3%A9vez-chamorro/)
  
+ --[Web personal/porfolio](https://lymbus.github.io/PORFOLIO/)
+ 
 ## Licencia🧾:
 
 -MIT
