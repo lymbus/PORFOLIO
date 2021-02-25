@@ -1,15 +1,13 @@
 :root{
-    --colorFondo:#e6e6e6;
+    --colorFondo:#a7a7a7;
+    --colorFondoprueba:rgba(0, 0, 0, 0.726);
     --colorSecundario:rgb(118, 212, 216);
-    --colorTerc:#161616;
-    --colorLetras:rgb(15, 15, 15);
+    --colorTerc:#000000d7;
+    --colorLetras:rgb(0, 0, 0);
 
     --tipografia:'Inconsolata';
-    --tipoSeccionSize:1.6em;
-    --tipoSeccionWeight:600;
-
-    --neoOscuro:#6ab4af;
-    --neoClaro:#ffffff;
+    --tipoSeccionSize:3em;
+    --tipoSeccionWeight:800;
 }
 
 @media only screen and (max-width:960px){

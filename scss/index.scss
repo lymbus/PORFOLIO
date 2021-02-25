@@ -5,27 +5,32 @@ body{
     font-family: var(--tipografia);
     font-weight: 600;
     text-align: center;  
+    
+    background: url(../assets/paper.jpg)  repeat ;
+    background-size: 40%;
 }
+ 
+
 .header{
     width: 100%;
     padding: 1.2em;
-    
+    text-transform: uppercase;
     @include flexible (row,wrap,space-between,center);
 
-    z-index: 2;
+    z-index:4;
     position: fixed;
     top: 0;
     left: 0;
     transition: all .5s ease;
     @media only screen and (max-width:960px){
-        @include flexible (row,wrap,center,flex-start);
+        @include flexible (row,wrap,center,center);
         max-height: 100%;    
     } 
     &.ampliar{
-        background-color: rgba(58, 58, 58, 0.822);
+        background-color: rgba(255, 255, 255, 0.897);
         @media only screen and (max-width:960px){
             width: 100%;
-            background-color: var(--colorFondo);
+            background-color: var(--colorFondo);   
         } 
     }
     &__h1{
@@ -39,70 +44,76 @@ body{
         }
     }
     &__nav{
-        width:40%;
-        // margin: auto;
-        @include flexible (row,nowrap,space-between,center);
+        width:60%;
+        font-size: 1.3em;
         opacity: 1;
         transition: all .5s ease;
         @media only screen and (max-width:960px){
-            // display: none; 
             width: 100%;
+            height: 100vh;
             opacity: 0;
-            
-            @include flexible (row-reverse,wrap,space-around,center);
             position: fixed;
             bottom: 0;
             padding: 1em 0;
-            transform: translateY(100%);
-            
+            transform: translateY(100%);  
+            @include flexible (row,wrap,center,center);    
         } 
         &.abrir{
             opacity: 1;
             transform: translateY(0%);
-            background-color:rgb(54, 53, 53);
+            background-color:var(--colorLetras);
             color: var(--colorSecundario);
         }      
     }
     &__ul{
-        // margin: 0 1em;
-        @include flexible (row,nowrap,center,center); 
+        @include flexible (row,wrap,flex-end,center); 
         @media only screen and (max-width:960px){
-            // display: none; 
-            // width: 100%;
-            @include flexible (row,nowrap,space-between,center);
-            padding: .2em;
+            width: 100%;
+            
+            margin: 2em 0;
         }     
     }
     &__li{
         margin:0 .6em;
-        overflow: hidden;
-        >.linea{
+        padding: .6em ;
+        
+        position: relative;
+        transition: all .4s ease;
+        @media only screen and (max-width:960px){
             width: 100%;
-            min-height: .1em;
-            background-color: var(--colorLetras);
-            opacity: 0;
-            transform: translateX(0%) scaleX(0);
-            transition: all .6s ease;  
-            transform-origin: 50% 50%; 
-            &.aqui{
-                opacity: 1;
-                transform: translateX(0%) scaleX(1);
-            }
-        }
-        &:hover >.linea{
-            transform: translateX(0%) scaleX(1);
-            opacity:1;
+            margin: auto;
+            padding: .2em;
+            margin: 1em 0;
+        } 
+        &:hover{
+            color: var(--colorSecundario);
         }
     } 
-    &__fab{
-        font-size: 1.4em;
-        margin: 0 0 0 .4em;
-        transform: scale(1);
-        transition: all .6s ease;
-        &:hover{
-            transform: scale(1.2);
+    &__svg{
+        position: absolute;
+        left: 4px;
+        top: 1.3em;
+        transform-origin: left;
+        opacity: 0;
+        transition: all .8s ease;
+        transform: scaleX(0) translateX(-150%)  skew(60deg);
+        pointer-events: none;
+        @media only screen and (max-width:960px){
+            display: none;
+        }
+        &.des{
+            opacity: 1;
+            transform:scaleX(1) translateX(0)  skew(0deg,);
         }
     }
+    &__a{
+        @media only screen and (max-width:960px){
+            display: inline-flex;
+            margin: auto;
+            text-transform: uppercase;
+        }    
+    }
+
     &__menu{
         position: absolute;
         width: 2em;
@@ -112,8 +123,7 @@ body{
         cursor: pointer;
         transform: rotateZ(0);
         transition: all .6s ease;
-        @include efecto(#659c98,var(--neoClaro));
-    
+
         @media only screen and (max-width:960px){
             position: fixed;
             opacity: 1; 
@@ -145,241 +155,191 @@ body{
 }
 .main{
     width: 100%;
-    background-color: var(--colorFondo);
+    
     @include flexible (column,nowrap,center,center); 
 }
 
 // PÁGINA INICIO
 
 .inicio{
-
-    width: 60%;
+    width: 100%;
     height: 100vh;
     font-size: 1.8em;
-    background-image: url(../assets/gotas.png);
-    background-size: cover;
-    background-position:center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
+    
     @include flexible (column,nowrap,center,center); 
     @media only screen and (max-width:960px){
-        width: 85%;
         min-height: auto;
+        background: url(../assets/paper_movil.png);
     }
-    &__explorar{
-        margin: 1em 0;
-        padding: .2em 1em;
-        font-size: .8em;
-        display: inline-flex;
-        
-        @include efecto(var(--neoOscuro),var(--neoClaro));
-        opacity: 1;
-        transition: all .4s ease;
-        &:hover{
-            @include efecto(#283837,var(--neoClaro));
+   
+    &__nubes{
+        width: 30%;
+        animation: nube 4s  ease both ;
+        position: absolute;
+        top: 6em;
+        z-index: 0;
+        @media only screen and (max-width:960px){
+            display: none;
         }
     }
-    &__scroll{
-        margin-top: .4em;
-        animation: movFlecha 3s infinite both;
+    &__gotas{
+        width: 20%;
+        animation: got 4s  ease both ;
+        position: absolute;
+        top: 4em;
+        left: 30%;
+        transform: rotate(60deg);
+        z-index: 0;
     }
     &__fondo{
-        width: 50%;
+        width: 30%;
+        animation: acuarela 4s  ease both .2s;
+        position: relative;
+        z-index: 2;
+        @media only screen and (max-width:960px){
+            width: 80%;
+            min-height: auto;
+        }
     }
     &__h3{
+        width: 15%;
         font-size: .9em;
+        color: rgb(109, 223, 238);
+        position: absolute;
+        z-index: 3;
+        @media only screen and (max-width:960px){
+            width: 60%;
+            min-height: auto;
+        }
+    }
+    &__strong{
+        width: 100%;
+        font-size: .7em;
     }
     &__p{
-        font-size: .2em;
+        font-size: .6em;
     }
 }
 // PÁGINA PROYECTOS
 .proyectos{
     width: 100%;
-    padding-top: 2em;
+    padding-top: 3.4em;
+    background: var(--colorTerc);
+    color: white;
+   
+    background-color: var(--colorTerc);
+   
     @include flexible (row,wrap,center,center);
-    
     
     @media only screen and (max-width:960px){
         height: inherit;
+        }
+    &__h2{
+        @include fontSecciones;
+        color: var(--colorLetras);
+        padding: 1.2em;
+        background-image: url(../assets/fondotexto.png);
+        background-size: cover;
     }
     &__tipo{
-        width: 80%;
-        height: 100vh;
-        margin: 1em 0;
-
-        border-bottom:1px var(--colorLetras) solid;
-        border-top:1px var(--colorLetras) solid;
-
+        width: 100%;
+      
         @include flexible (row,wrap,center,center);
 
-        position: relative; 
-        
+        position: relative;   
     }
-    &__h2{
+    &__h3{
         width: 100%;
-        @include fontSecciones;
+        padding: 2em 0;
+        font-size: 2em;
     }
     &__p{
         width: 100%;
     }
     &__seccion{
         width: 20%;
-        padding: 1em;
-        background-color: var(--colorSecundario);
+        background-color: rgba(255, 255, 255, 0.13);
         margin: 2em;
         border-radius: 15px;
-        @include flexible (column-reverse,nowrap,center,center); 
-        text-transform: uppercase;
-        cursor: pointer;
+        
+        @include flexible (column,nowrap,flex-start,center); 
+        position: relative;
+        
         opacity: 1;
         transform: scale(1);
         transition: all .6s ease;
+        
         @media only screen and (max-width:960px){
             width: 100%;
-            font-size: .6em;
-            height: 1em;
-            overflow: hidden;
+            font-size: .9em;
+            height: auto;
         }
-        &.acordeon{
-            overflow: inherit;
-            height: 8em;
-        }
-        &:hover {
-            opacity: .6;
-            transform: scale(.9);
-            transition: all .4s ease;
-        }
-        &:hover .proyectos__li{
-            opacity: 1;
-        }
-    }
-    &__h3{
+    }    
+    &__icono{
+        cursor: pointer;
+        font-size: 2em;
+        position: absolute;
+        bottom: 35%;
+        z-index: 3;
+    }  
+    
+    &__titulo{
         font-size: 1.2em;
         font-weight: 800;
-
-        margin: 1em 0;   
+        padding: 1.3em;
     }
-    &__ul{
-        @include flexible (row,nowrap,center,center);  
-        transform: scale(1); 
-        transition: all .5s ease;
-    }
-    &__li{
+    &__git{
         opacity: 0;
-        margin: 0 .8em;
-        transform: translateY(-100%);
-        transform: scale(1);
-        transition: all .5s ease;
-        @media only screen and (max-width:960px){
-            font-size: 1.8em;
-            margin:.6em 1.8em;
-        }
-        &:hover{
-            transform: scale(1.4);
-        }
-    }
-    &__flecha{
-        margin: 0 .2em;
-        color: var(--colorLetras);
-        font-size: 2.4em;
-        opacity: 0.5;
-        transition: all 0.4s ease;
-        cursor: pointer;
-        &.siguiente{
-            position: absolute;
-            right: 10%;
-            top:50%;
-            @media only screen and (max-width:960px){
-                right: 0;
-            }
-        }
-        &.anterior{
-            position: absolute;
-            left:10%;
-            top:50%;
-            @media only screen and (max-width:960px){
-                left: 0;
-            }
-        }
-        &:hover{
+        @include flexible (column,nowrap,flex-start,center);  
+        transition: all 2s ease;
+        pointer-events: none;
+        &.play{
             opacity: 1;
-        }
-    }
- 
-    &__slider{
-        width:80%;
-        min-height: 60vh;
-        margin:  1em auto;
-        
-        border-bottom:1px var(--colorLetras) solid;
-        border-top:1px var(--colorLetras) solid;
-
-        position: relative;
+            pointer-events: inherit;
+        } 
+    } 
+    &__gif{
+        width: 20%;
         @media only screen and (max-width:960px){
-            width: 96%;
-            height: 30em;
+            width: 70%;
         }
-        
-    }
-    &__img{
-        width:30%;
-        height: 60%;
-        position: absolute;
-        z-index: 0;
-        overflow-y: hidden;
-        opacity: 0;
-        position: absolute;
-        top:30%;
-        left:calc( 70% / 2 );
-        
-        transition: all .5s ease;
-        @media only screen and (max-width:960px){
-            width:80%;
-            top:30%;
-            left:10%;
-        }
-        &.ver{
-            opacity: 1;
-        }  
-    }
-    &__filtro{
-        background-color: rgb(25, 81, 88);
-        width:30%;
-        height: 60%;
-        position: absolute;
-        top:30%;
-        left:calc( 70% / 2 );
-     
-        z-index: 1;
-        opacity: .4;
-        
-        transition: all .5s ease;
-        @media only screen and (max-width:960px){
-            display: none;   
-        }
+    }  
+    &__a{
+        padding: .6em;
+        transition: all .4s ease;
+        z-index: 6;
+        @include flexible (column,nowrap,flex-start,center);  
         &:hover{
-            opacity: 0;
-        }  
+            color: var(--colorSecundario);    
+        }
     }
+  
 }
-
 // PÁGINA ABOUT
 
 .about{
     width: 100%;
     line-height: 1.6em;
     padding: 6em 0 0 0;
+    background-image: url(../assets/fondoblanco.png);
+    background-color: var(--colorTerc);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
     @include flexible (column,nowrap,center,center); 
     &__h2{
         @include fontSecciones;
-        padding: 1em;
+        color: var(--colorLetras);
+        padding: 1.2em;
+        background-image: url(../assets/fondotexto.png);
+        background-size: cover;
     }
     &__grid{
         width: 50%;
         margin: auto;    
         height: 80vh;
+        background-image: url(../assets/gotas.png);
 
         display: grid;
         grid-template-columns: repeat( 4, 1fr);
@@ -387,8 +347,9 @@ body{
         gap: .2em;
         
         @media only screen and (max-width:960px){
-            width: 98%;
+            width: 100%;
             font-size: .6em;
+            padding: .2em;
         } 
     }
     &__h3{
@@ -398,7 +359,6 @@ body{
     }
     &__item{
         padding: 1em;
-        border: 1px solid black;
         @include flexible (column,nowrap,center,center); 
         @media only screen and (max-width:960px){
             padding: .1em;
@@ -411,9 +371,9 @@ body{
         }
         &.imagen{
             grid-column: -1/-3;  
-            grid-row: -1/-3; 
+            grid-row: -1/-4; 
             overflow: hidden;
-            opacity: .3; 
+            opacity: .8; 
         }
         .item__img{
             width: 70%;
@@ -429,14 +389,15 @@ body{
     width: 100%;
     min-height: 10%;
     padding: 3em 0;
+    background-color: var(--colorTerc);
     &__p{
         display: inline-flex;
+        background-color: var(--colorSecundario);
+        border-radius: 15px;
         padding: .2em .6em;
-        @include efecto(var(--neoOscuro),var(--neoClaro));
         transform: scale(1);
         transition: all .4s ease;    
         cursor: pointer;
-        animation: movFlecha 3s infinite both;
         &:hover{
             transform: scale(1.1);
         }
@@ -446,12 +407,12 @@ body{
         min-height: 30%;
         padding: 1em 1em 4em;
         @include glass;
-        
+        color: var(--colorLetras);
         pointer-events: none;
         position: fixed;
         top: 10%;
         left: 25%;
-        z-index: 2;
+        z-index: 6;
         opacity: 0;
         transform: translateY(100%);
         transition: all .4s ease;
@@ -487,7 +448,7 @@ body{
         }    
     }
     &__columna{
-        width: 48%;
+        width: 50%;
         min-height: 30em;
         // background-color: var(--c);
         @include flexible (column,nowrap,center,center);
@@ -505,12 +466,14 @@ body{
     &__li{
         width: 100%;
         font-size: .8em;
+        margin: 2em 0;
     }
     .fab{
         font-size: 2em;
         transition: all .4s ease;
+        transform: scale(1);
         &:hover{
-            color: var(--colorSecundario);
+            transform: scale(1.2);
         }
     }
     &__img{
@@ -519,18 +482,26 @@ body{
     }
 }
 .form{
-    width: 100%;
-    @include flexible (column,nowrap,space-between,center); 
+    width: 90%;
+    margin: 2em 0;
+    @include flexible (column,nowrap,center,center); 
+    &__campo{
+        width: 100%;
+    }
     &__entrada{
-        width: 80%;
+        width: 100%;
         margin: 1em 0;
         padding: .6em;
         
-        border:2px solid var(--colorSecundario) ;
+        border:2px solid var(--colorLetras) ;
         border-radius: 10px;
+        &.mensaje{
+            height: 8em;
+        }
     }
     &__boton{
-      background-color: var(--colorSecundario);  
+      background-color: var(--colorLetras);  
+      color: var(--colorSecundario);
       padding: .4em 1em;
       border-radius: 15px;
       transform: scale(1);
@@ -570,3 +541,41 @@ body{
     }
 }
 
+
+@keyframes acuarela{
+    from{
+        transform-origin: center;
+        transform: scale(0) rotate(20deg);
+
+        opacity: 0;
+    }
+    to{
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+@keyframes nube{
+    from{
+        transform-origin: center;
+        transform: scale(0);
+
+        opacity: 0;
+    }
+    to{
+        transform: scale(.81) ;
+        opacity: .6;
+    }
+}
+@keyframes got{
+    from{
+        transform-origin: right;
+        transform: rotateY(90deg);
+        
+        opacity: 0;
+    }
+    to{
+        transform: rotateY(0) ;
+        opacity: 1;
+        
+    }
+}
